@@ -1,21 +1,13 @@
 import sys
 input = sys.stdin.readline
 
-def fibo(num, memo):
-    if num in memo:
-        return memo[num]
+cnt0 = [1, 0]
+cnt1 = [0, 1]
 
-    if num == 0:
-        memo[0] = (1, 0)
-    elif num == 1:
-        memo[1] = (0, 1)
-    else:
-        fibo0 = fibo(num-1, memo)
-        fibo1 = fibo(num-2, memo)
-        memo[num] = (fibo0[0] + fibo1[0], fibo0[1] + fibo1[1])
-
-    return memo[num]
+for i in range(2, 41):
+    cnt0.append(cnt0[i-2] + cnt0[i-1])
+    cnt1.append(cnt1[i-2] + cnt1[i-1])
 
 for _ in range(int(input())):
-    result = fibo(int(input()), {})
-    print(result[0], result[1])
+    n = int(input())
+    print(cnt0[n], cnt1[n])
