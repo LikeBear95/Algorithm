@@ -1,7 +1,10 @@
+import sys
+input = sys.stdin.readline
+
 d, p = 0, 0
 
 for _ in range(int(input())):
-    s = input()
+    s = input().rstrip()
     if s == "D":
         d += 1
     elif s == "P":
