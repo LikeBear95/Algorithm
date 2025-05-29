@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 lst = list(map(int, input().split()))
 t = 0
 for i in lst:
