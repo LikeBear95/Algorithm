@@ -4,9 +4,8 @@ while True:
         break
     while len(str(n)) != 1:
         print(n, end=" ")
-        t = [int(x) for x in str(n)]
-        c = 1
-        for i in t:
-            c *= i
-        n = c
+        t = 1
+        for i in [int(x) for x in str(n)]:
+            t *= i
+        n = t
     print(n)
