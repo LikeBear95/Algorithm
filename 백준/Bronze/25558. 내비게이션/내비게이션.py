@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 n = int(input())
 sx, sy, ex, ey = map(int, input().split())
 l = []
