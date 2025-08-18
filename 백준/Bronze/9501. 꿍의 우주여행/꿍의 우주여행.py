@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 for i in range(int(input())):
     n, d = map(int, input().split())
     t = 0
