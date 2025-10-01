@@ -4,4 +4,4 @@ input = sys.stdin.readline
 n = int(input())
 l = list(map(int, input().split()))
 
-print(sorted(l)[-1])
+print(max(l))
