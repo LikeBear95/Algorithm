@@ -1,10 +1,13 @@
+import sys
+input = sys.stdin.readline
+
 n, m = map(int, input().split())
-l = [[] for _ in range(n)]
+l = [0 for _ in range(n)]
 
 for _ in range(m):
     a, b = map(int, input().split())
-    l[a-1].append(b-1)
-    l[b-1].append(a-1)
+    l[a-1] += 1
+    l[b-1] += 1
 
 for i in l:
-    print(len(i))
+    print(i)
