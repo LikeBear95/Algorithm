@@ -1,10 +1,9 @@
 n, x = map(int, input().split())
-s = sum(list(map(int, input().split())))
-i = 0
+s = sum(map(int, input().split()))
 
-while True:
-    if (n+i)*x <= s+100*i:
-        break
-    i += 1
+i = x*n - s
 
-print(i)
+if i <= 0:
+    print(0)
+else:
+    print((i + (100-x) - 1) // (100-x))
