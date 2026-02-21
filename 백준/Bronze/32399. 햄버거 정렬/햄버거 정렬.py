@@ -2,7 +2,7 @@ s = input()
 
 if s == "(1)":
     print(0)
-elif s in [")(1", "1)(", "1()", "()1"]:
-    print(1)
-else:
+elif s == ")1(":
     print(2)
+else:
+    print(1)
