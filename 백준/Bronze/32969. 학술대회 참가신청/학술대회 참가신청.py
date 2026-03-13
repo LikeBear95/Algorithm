@@ -1,13 +1,13 @@
 import sys
 input = sys.stdin.readline
 
-l = list(map(str, input().rstrip().split()))
+s = input().rstrip()
 
-
-for s in l:
-    if s in ["social", "history", "language", "literacy"]:
+for i in ["social", "history", "language", "literacy"]:
+    if i in s:
         print("digital humanities")
         break
-    elif s in ["bigdata", "public", "society"]:
+for j in ["bigdata", "public", "society"]:
+    if j in s:
         print("public bigdata")
         break
