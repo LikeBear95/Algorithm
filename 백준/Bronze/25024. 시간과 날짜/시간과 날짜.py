@@ -1,19 +1,9 @@
 import sys
 input = sys.stdin.readline
 
-days = {
-    1:31, 2:29, 3:31, 4:30, 5:31, 6:30,
-    7:31, 8:31, 9:30, 10:31, 11:30, 12:31
-}
-
-def HM(h, m):
-    return 0 <= h <= 23 and 0 <= m <= 59
-
-def MD(m, d):
-    return m in days and 1 <= d <= days[m]
+d = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 for _ in range(int(input())):
     x, y = map(int, input().split())
-    
-    print("Yes" if HM(x, y) else "No", end=" ")
-    print("Yes" if MD(x, y) else "No")
+    print("Yes" if 0<=x<=23 and 0<=y<=59 else "No", end=" ")
+    print("Yes" if 1<=x<=12 and 1<=y<=d[x] else "No")
