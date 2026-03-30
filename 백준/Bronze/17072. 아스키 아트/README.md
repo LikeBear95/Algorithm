@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 32412 KB, 시간: 208 ms
+메모리: 32412 KB, 시간: 160 ms
 
 ### 분류
 
@@ -12,7 +12,7 @@
 
 ### 제출 일자
 
-2026년 3월 30일 16:56:19
+2026년 3월 30일 17:03:29
 
 ### 문제 설명
 
@@ -25,11 +25,11 @@
 <p>하지만 이미지를 흑백 이미지로 바꾸는 필터를 통해 원본 이미지를 흑백 이미지로 바꾸고, 그 이후 아스키 아트로 변환할 수 있다면 퀄리티가 높아질 수 있다.<br>
 아래는 이미지 하나가 아스키 아트로 변하는 예시를 보여준다.</p>
 
-<p style="text-align: center;"><img alt="" src="https://upload.acmicpc.net/db41aa3b-2632-4b6c-bf95-cfff3bdb08e1/-/preview/">    <img alt="" src="https://upload.acmicpc.net/33d63b46-bb38-4db8-b434-68ad22f1d1e0/-/preview/">    <img alt="" src=""></p>
+<p style="text-align: center;"><img alt="" src="https://upload.acmicpc.net/db41aa3b-2632-4b6c-bf95-cfff3bdb08e1/-/preview/">    <img alt="" src="https://upload.acmicpc.net/33d63b46-bb38-4db8-b434-68ad22f1d1e0/-/preview/">    <img alt="" src="https://upload.acmicpc.net/a2ace80f-c15c-4f9b-99e0-3077a5d4619b/-/preview/"></p>
 
 <p>어떤 그림 하나를 흑백 이미지로 바꾸기 위해 각 픽셀마다 R, G, B 3색이 어떤 비율로 혼합될지 결정하는 Intensity function을 사용한다. Intensity function은 0 이상 255 이하의 정수 R, G, B의 값을 받아 정수 하나를 리턴하는 함수로, 아래와 같이 정의한다.</p>
 
-<p style="text-align: center;"><strong><em>$$ I(R,G,B)=2126R+7152G+ 722B $$</em></strong></p>
+<p style="text-align: center;"><strong><em><mjx-container class="MathJax" jax="CHTML" display="true" style="font-size: 109%; position: relative;"> <mjx-math display="true" class="MJX-TEX" aria-hidden="true" style="margin-left: 0px; margin-right: 0px;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43C TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D445 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D43A TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D435 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c32"></mjx-c><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c32"></mjx-c><mjx-c class="mjx-c36"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D445 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c37"></mjx-c><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c35"></mjx-c><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43A TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c37"></mjx-c><mjx-c class="mjx-c32"></mjx-c><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D435 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>I</mi><mo stretchy="false">(</mo><mi>R</mi><mo>,</mo><mi>G</mi><mo>,</mo><mi>B</mi><mo stretchy="false">)</mo><mo>=</mo><mn>2126</mn><mi>R</mi><mo>+</mo><mn>7152</mn><mi>G</mi><mo>+</mo><mn>722</mn><mi>B</mi></math></mjx-assistive-mml><span aria-hidden="true" class="no-mathjax mjx-copytext">$$ I(R,G,B)=2126R+7152G+ 722B $$</span> </mjx-container></em></strong></p>
 
 <p>위의 함수의 결과값은 0 이상 2,550,000 이하의 값을 가지게 되며, 값이 높을수록 흰색에 가깝고, 값이 낮을수록 검은색에 가까운 픽셀이 된다.<br>
 아스키 아트는 intensity function에 따라 정수 하나로 변환된 각 픽셀을 아래의 기준에 맞추어 변환하면 완성된다.</p>
