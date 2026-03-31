@@ -1,0 +1,6 @@
+import sys
+input = sys.stdin.readline
+
+for _ in range(int(input())):
+    n, s = map(int, input().split())
+    print("Yes" if s-n == 10**7 else "No")
